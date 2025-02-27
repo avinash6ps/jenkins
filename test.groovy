@@ -7,20 +7,22 @@ pipeline{
       }
       
     }
-    parallel{
-          stage('UT'){
-            steps{
-                echo "UT"   
+    stage('Testing'){
+      parallel{
+            stage('UT'){
+              steps{
+                  echo "UT"   
+              }
+                  
+              }
+            stage('Final Testing'){
+              steps{
+                echo "Final"
+              }
+                
             }
-                 
-            }
-          stage('Final Testing'){
-            steps{
-              echo "Final"
-            }
-              
-          }
 
+      }
     }
     stage('Deply'){
       steps{
