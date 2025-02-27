@@ -23,10 +23,34 @@ pipeline{
 
     }
     stage('Deply'){
-      stepls{
+      steps{
         echo "Deploy"
       }
       
     }
   }
+}
+
+
+pipeline {
+    agent any
+
+    stages {
+        stage('Build') {
+            steps {
+                echo 'Hello World'
+            }
+        }
+        stage('Test'){
+            steps{
+                echo  'Test'
+            }
+        }
+        stage('Deplay')
+        {
+            steps{
+                echo 'Deploy'
+            }
+        }
+    }
 }
