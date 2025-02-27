@@ -1,20 +1,32 @@
 pipeline{
-   agent any
+  agent any
   stages{
     stage('Build'){
-      echo "Build"
+      steps{
+          echo "Build"
+      }
+      
     }
     parallel{
           stage('UT'){
-            echo "UT"        
+            steps{
+                echo "UT"   
+            }
+                 
             }
           stage('Final Testing'){
+            steps{
               echo "Final"
+            }
+              
           }
 
     }
     stage('Deply'){
-      echo "Deploy"
+      stepls{
+        echo "Deploy"
+      }
+      
     }
   }
 }
